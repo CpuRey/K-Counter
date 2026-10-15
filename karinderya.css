@@ -1,0 +1,160 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(images/karinderya.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 20px;
+}
+
+h1{
+    background-color: rgb(255, 123, 123);
+    width: fit-content;
+    padding: 10px;
+    border-radius: 30px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+img{
+    width: 150px;
+    max-width: 100%;
+    height: 173px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin: 5px 10px;
+    
+}
+
+.order-menu{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.karinderya-food{
+    background-color: rgb(10, 99, 70);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.karinderya-food img{
+    display: block;
+    margin: 5px auto;
+}
+
+.karinderya-text p{
+    background-color: rgb(214, 166, 104);
+    padding: 15px;
+    font-size: large;
+    margin: 10px 0;
+    border-radius: 30px;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+form{
+    background-color: rgb(221, 156, 70);
+    padding: 20px;
+    width: 70%;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+form label{
+    display: inline-block;
+    width: 130px;
+    margin-bottom: 15px;
+}
+
+form input{
+    padding: 5px;
+}
+
+/* ORDER SECTION */
+
+.choose-order{
+    background-color: rgb(221, 70, 70);
+    width: 70%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.choose-order h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.choose-order label{
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.choose-order input[type="number"]{
+    width: 70px;
+    padding: 5px;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+
+.choose-order button{
+    background-color: rgb(10, 99, 70);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.choose-order button:hover{
+    background-color: rgb(14, 130, 91);
+}
+
+/* ORDER SUMMARY */
+
+#summary{
+    background-color: white;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 2px solid rgb(214, 166, 104);
+}
+
+#summary p{
+    margin: 5px 0;
+}
+
+/* TOTAL AMOUNT */
+
+.choose-order h3{
+    margin-top: 15px;
+}
+
+#total{
+    color: rgb(241, 241, 241);
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#back{
+    background-color: #9ddbff;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

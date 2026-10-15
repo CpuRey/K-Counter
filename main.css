@@ -1,0 +1,132 @@
+img {
+    width: 130px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+
+}
+
+body {
+    background-color: #f6f6f5;
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    background-color: #d62828;
+    padding: 15px;
+    border-radius: 12px;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+nav{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+nav a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav a:hover{
+    background-color: #d62828;
+    color: white;
+    transform: translateY(-2px);
+}
+
+nav a:active{
+    transform: translateY(0);
+}
+
+#karinderya {
+    background-color: #f694239d;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.karinderya-food-section {
+    background-color: #ffef78;
+    padding: 20px;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+.food {
+    background-color: #ff7676;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.food-text {
+    padding-left: 20px;
+    flex: 1;
+}
+
+.price {
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+    text-align: right;
+    padding: 5px 10px;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+}
+
+#jollibee {
+    background-color: #f9f8f79d;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.jollibee-food-section {
+    margin-top: 80px;
+    background-color: #ff962e;
+    padding: 20px;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+.jollibee-food {
+    background-color: #9ddbff;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.jollibee-food-text {
+    padding-left: 20px;
+    flex: 1;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jollibee Ordering System</title>
+
+    <link rel="stylesheet" href="jollibee.css">
+    <script src="jollibee.js" defer></script>
+</head>
+
+<body>
+
+    <h1>Order Now:</h1>
+
+    <div class="order-menu">
+
+        <div class="jollibee-food">
+            <img src="images/chicken-joy-meal.jpg" alt="Chicken Joy">
+            <div class="jollibee-text">
+                <p>Chicken Joy: ₱120</p>
+            </div>
+        </div>
+
+        <div class="jollibee-food">
+            <img src="images/sphagetti.jpg" alt="Spaghetti">
+            <div class="jollibee-text">
+                <p>Spaghetti: ₱70</p>
+            </div>
+        </div>
+
+        <div class="jollibee-food">
+            <img src="images/yum-burger.jpg" alt="Yum Burger">
+            <div class="jollibee-text">
+                <p>Yum Burger: ₱60</p>
+            </div>
+        </div>
+
+        <div class="jollibee-food">
+            <img src="images/chiken-nuggets.jpg" alt="Chicken Nuggets">
+            <div class="jollibee-text">
+                <p>Chicken Nuggets: ₱100</p>
+            </div>
+        </div>
+
+        <div class="jollibee-food">
+            <img src="images/fries.jpg" alt="Fries">
+            <div class="jollibee-text">
+                <p>Fries: ₱73</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="choose-order">
+
+        <h2>Select Quantity</h2>
+
+        <label for="chicken">Chicken Joy:</label>
+        <input type="number" id="chicken" min="0" value="0">
+        <br><br>
+
+        <label for="spaghetti">Spaghetti:</label>
+        <input type="number" id="spaghetti" min="0" value="0">
+        <br><br>
+
+        <label for="burger">Yum Burger:</label>
+        <input type="number" id="burger" min="0" value="0">
+        <br><br>
+
+        <label for="nuggets">Chicken Nuggets:</label>
+        <input type="number" id="nuggets" min="0" value="0">
+        <br><br>
+
+        <label for="fries">Fries:</label>
+        <input type="number" id="fries" min="0" value="0">
+        <br><br>
+
+        <button type="button" onclick="calculateOrder()">
+            Calculate Total
+        </button>
+
+        <h3>Order Summary</h3>
+        <div id="summary">
+            <p>No items selected.</p>
+        </div>
+
+        <h3>Total Amount: ₱<span id="total">0</span></h3>
+
+    </div>
+
+    <div class="fill-info">
+
+        <form action="done.html" method="post">
+
+            <h2>Customer Information:</h2>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+            <br><br>
+
+            <label for="contact">Contact Number:</label>
+            <input type="text" id="contact" name="contact" required>
+            <br><br>
+
+            <input type="submit" value="Submit Order">
+
+        </form>
+        <h3  id="back"><a href="main.html">Go Back To Main Page</h3>
+    </div>
+
+</body>
+
+</html>

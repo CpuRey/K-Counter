@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karinderya Ordering System</title>
+    <link rel="stylesheet" href="karinderya.css">
+    <script src="karinderya.js" defer></script>
+</head>
+
+<body>
+<h1>Order Now:</h1>
+    <div class="order-menu">
+
+        <div class="karinderya-food">
+            <img src="images/adobo.png" alt="Adobo">
+            <div class="karinderya-text">
+                <p>Adobo: ₱85</p>
+            </div>
+        </div>
+
+        <div class="karinderya-food">
+            <img src="images/tinola.jpg" alt="Tinola">
+            <div class="karinderya-text">
+                <p>Tinola: ₱93</p>
+            </div>
+        </div>
+
+        <div class="karinderya-food">
+            <img src="images/munggo.jpg" alt="Munggo">
+            <div class="karinderya-text">
+                <p>Munggo: ₱65</p>
+            </div>
+        </div>
+
+        <div class="karinderya-food">
+            <img src="images/afritada.jpg" alt="Afritada">
+            <div class="karinderya-text">
+                <p>Afritada: ₱105</p>
+            </div>
+        </div>
+
+        <div class="karinderya-food">
+            <img src="images/dinuguan.jpg" alt="Dinuguan">
+            <div class="karinderya-text">
+                <p>Dinuguan: ₱83</p>
+            </div>
+        </div>
+
+        <div class="karinderya-food">
+            <img src="images/pinakbet.jpg" alt="Pinakbet">
+            <div class="karinderya-text">
+                <p>Pinakbet: ₱75</p>
+            </div>
+        </div>
+
+        <div class="karinderya-food">
+            <img src="images/minudo.jpg" alt="Minudo">
+            <div class="karinderya-text">
+                <p>Minudo: ₱93</p>
+            </div>
+        </div>
+
+        <div class="karinderya-food">
+            <img src="images/bicol-express.jpg" alt="Bicol Express">
+            <div class="karinderya-text">
+                <p>Bicol Express: ₱105</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="choose-order">
+
+        <h2>Select Quantity</h2>
+
+        <label>Adobo:</label>
+        <input type="number" id="adobo" min="0" value="0"><br><br>
+
+        <label>Tinola:</label>
+        <input type="number" id="tinola" min="0" value="0"><br><br>
+
+        <label>Munggo:</label>
+        <input type="number" id="munggo" min="0" value="0"><br><br>
+
+        <label>Afritada:</label>
+        <input type="number" id="afritada" min="0" value="0"><br><br>
+
+        <label>Dinuguan:</label>
+        <input type="number" id="dinuguan" min="0" value="0"><br><br>
+
+        <label>Pinakbet:</label>
+        <input type="number" id="pinakbet" min="0" value="0"><br><br>
+
+        <label>Minudo:</label>
+        <input type="number" id="minudo" min="0" value="0"><br><br>
+
+        <label>Bicol Express:</label>
+        <input type="number" id="bicol" min="0" value="0"><br><br>
+
+        <button type="button" onclick="calculateOrder()">
+            Calculate Total
+        </button>
+
+        <h3>Order Summary</h3>
+        <div id="summary"></div>
+
+        <h3>Total Amount: ₱<span id="total">0</span></h3>
+
+    </div>
+
+    <div class="fill-info">
+
+        <form action="done.html" method="post">
+
+            <h2>Customer information:</h2>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+            <br><br>
+
+            <label for="contact">Contact Number:</label>
+            <input type="text" id="contact" name="contact" required>
+            <br><br>
+
+            <input type="submit" value="Submit Order">
+
+        </form>
+
+    </div>
+    <h3  id="back"><a href="main.html">Go Back To Main Page</h3>
+</body>
+</html>
