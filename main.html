@@ -4,28 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-Counter</title>
+    <meta name="theme-color" content="#214b3a">
+    <meta name="description" content="Discover Filipino comfort food and order your K-Counter favorites.">
+    <title>K-Counter | Digital Karinderya</title>
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-    <h1>K-Counter</h1>
-    <nav>
-        <a href="main.html">Main Page</a>
-        <a href="karinderya.html">Order Page</a>
-        <a href="profile.html">User Profile Page</a>
-    </nav>
+    <header class="site-header" id="top">
+        <a class="brand" href="main.html" aria-label="K-Counter home">
+            <img src="images/K-counter-logo.jpg" alt="">
+            <span><strong>K-Counter</strong><small>Multi-Channel Food Operation & Delivery System</small></span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a class="nav-link active" href="main.html" aria-current="page">Home</a>
+            <a class="nav-link" href="#karinderya">Karinderya</a>
+            <a class="nav-link" href="#jollibee">Jollibee</a>
+            <a class="nav-link" href="profile.html">My profile</a>
+        </nav>
+    </header>
     <main>
-        <div class="karinderya-food-section">
-            <h2 id="karinderya">Karinderya Specials:</h2>
+        <section class="hero" aria-labelledby="hero-title">
+            <img class="hero-image" src="images/karinderya-pic.jpg" alt="A welcoming neighborhood karinderya serving Filipino dishes">
+            <div class="hero-content">
+                <p class="eyebrow">Sarap na parang lutong-bahay</p>
+                <h1 id="hero-title">Your neighborhood favorites, just a few clicks away.</h1>
+                <p>Discover comforting Filipino classics and familiar favorites, prepared for your next delicious meal.</p>
+                <a class="button button-light" href="#karinderya">Explore the menu <span aria-hidden="true">↓</span></a>
+            </div>
+        </section>
+
+        <section class="menu-section karinderya-food-section" aria-labelledby="karinderya">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Made for sharing</p>
+                    <h2 id="karinderya">Karinderya classics</h2>
+                    <p>Comforting lutong-bahay dishes, made to feel like home.</p>
+                </div>
+                <a class="button button-primary" href="karinderya.html">Order karinderya <span aria-hidden="true">→</span></a>
+            </div>
             <div class="food">
                 <img src="images/adobo.png" alt="picture of adobo">
                 <div class="food-text">
                     <h3>Adobo</h3>
                     <p>A classic Filipino dish made with tender pork or chicken simmered in soy sauce,
-                        vinegar, garlic, and spices, creating a rich and savory flavor.
-                        <p class="price">Price: ₱80 - ₱120</p>
-                    </p>
+                        vinegar, garlic, and spices, creating a rich and savory flavor.</p>
+                    <p class="price">₱35.99 – ₱39.99</p>
                 </div>
             </div>
 
@@ -34,9 +58,8 @@
                 <div class="food-text">
                     <h3>Tinola</h3>
                     <p>A comforting chicken soup cooked with ginger, green papaya, and leafy vegetables in
-                        a light and flavorful broth.
-                        <p class="price">Price: ₱90 - ₱130</p>
-                    </p>
+                        a light and flavorful broth.</p>
+                    <p class="price">₱34.99 – ₱39.99</p>
                 </div>
             </div>
 
@@ -45,9 +68,8 @@
                 <div class="food-text">
                     <h3>Munggo</h3>
                     <p>A hearty stew made from mung beans, vegetables, and pork or shrimp, known for its
-                        nutritious and home-cooked taste.
-                        <p class="price">Price: ₱60 - ₱100</p>
-                    </p>
+                        nutritious and home-cooked taste.</p>
+                    <p class="price">₱29.99 – ₱38.99</p>
                 </div>
             </div>
 
@@ -56,9 +78,8 @@
                 <div class="food-text">
                     <h3>Afritada</h3>
                     <p>A tomato-based stew featuring chicken or pork cooked with potatoes, carrots, and
-                        bell peppers for a rich and satisfying meal.
-                        <p class="price">Price: ₱90 - ₱140</p>
-                    </p>
+                        bell peppers for a rich and satisfying meal.</p>
+                    <p class="price">₱38.99 – ₱49.99</p>
                 </div>
             </div>
 
@@ -67,9 +88,8 @@
                 <div class="food-text">
                     <h3>Dinuguan</h3>
                     <p>A savory Filipino delicacy made with pork and a rich, flavorful sauce traditionally
-                        prepared with pork blood, garlic, and spices.
-                        <p class="price">Price: ₱80 - ₱120</p>
-                    </p>
+                        prepared with pork blood, garlic, and spices.</p>
+                    <p class="price">₱29.99 – ₱34.99</p>
                 </div>
             </div>
 
@@ -78,9 +98,8 @@
                 <div class="food-text">
                     <h3>Pinakbet</h3>
                     <p>A healthy vegetable dish made with squash, eggplant, bitter melon, okra, and shrimp
-                        paste, offering a unique blend of flavors.
-                        <p class="price">Price: ₱70 - ₱110</p>
-                    </p>
+                        paste, offering a unique blend of flavors.</p>
+                    <p class="price">₱29.99 – ₱35.99</p>
                 </div>
             </div>
 
@@ -89,9 +108,8 @@
                 <div class="food-text">
                     <h3>Minudo</h3>
                     <p>A popular Filipino pork stew cooked in a tomato-based sauce with potatoes, carrots,
-                        and liver for added richness.
-                        <p class="price">Price: ₱90 - ₱130</p>
-                    </p>
+                        and liver for added richness.</p>
+                    <p class="price">₱32.99 – ₱44.99</p>
                 </div>
             </div>
 
@@ -100,63 +118,67 @@
                 <div class="food-text">
                     <h3>Bicol Express</h3>
                     <p>A spicy and creamy dish made with pork simmered in coconut milk, chili peppers, and
-                        shrimp paste, originating from the Bicol region.
-                        <p class="price">Price: ₱90 - ₱140</p>
-                    </p>
+                        shrimp paste, originating from the Bicol region.</p>
+                    <p class="price">₱34.99 – ₱49.99</p>
                 </div>
             </div>
-            <button><a href="karinderya.html">Order Now</a></button>
-        </div>
-        <div class="jollibee-food-section">
-            <h2 id="jollibee">Jollibee Specials</h2>
+        </section>
+
+        <section class="menu-section jollibee-food-section" aria-labelledby="jollibee">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">A little extra joy</p>
+                    <h2 id="jollibee">Jollibee favorites</h2>
+                    <p>Beloved crispy, sweet, and savory picks for every kind of craving.</p>
+                </div>
+                <a class="button button-primary" href="jollibee.html">Order Jollibee <span aria-hidden="true">→</span></a>
+            </div>
             <div class="jollibee-food">
-                <img src="images/chicken-joy-meal.jpg" alt="picture of dinuguan">
+                <img src="images/chicken-joy-meal.jpg" alt="picture of chicken">
                 <div class="jollibee-food-text">
                     <h3>Chicken Joy Meal</h3>
-                    <p>Jollibees signature hand-breaded, crispy, and juicy fried chicken served with a steaming cup of rice and savory gravy, often paired with a drink or a side of Jolly Spaghetti
-                        <p class="price">Price: ₱88 - ₱219</p>
-                    </p>
+                    <p>Jollibee's signature hand-breaded, crispy, and juicy fried chicken served with a steaming cup of rice and savory gravy, often paired with a drink or a side of Jolly Spaghetti.</p>
+                    <p class="price">₱87.99 – ₱118.99</p>
                 </div>
             </div>
             <div class="jollibee-food">
-                <img src="images/sphagetti.jpg" alt="picture of dinuguan">
+                <img src="images/sphagetti.jpg" alt="picture of sphagetti">
                 <div class="jollibee-food-text">
                     <h3>Jolly Spaghetti</h3>
-                    <p>A uniquely Filipino-style sweet spaghetti featuring thick banana ketchup-based sauce, sliced hot dogs, ham, and ground meat, topped with grated cheese.
-                        <p class="price">Price: ₱69 - ₱75</p>
-                    </p>
+                    <p>A uniquely Filipino-style sweet spaghetti featuring thick banana ketchup-based sauce, sliced hot dogs, ham, and ground meat, topped with grated cheese.</p>
+                    <p class="price">₱68.99 – ₱74.99</p>
                 </div>
             </div>
             <div class="jollibee-food">
-                <img src="images/yum-burger.jpg" alt="picture of dinuguan">
+                <img src="images/yum-burger.jpg" alt="picture of yumburger">
                 <div class="jollibee-food-text">
                     <h3>Yumburger</h3>
-                    <p>Jollibee's classic, budget-friendly hamburger with a seasoned beef patty and special dressing (also available with cheese or as the double-patty Aloha Yumburger with bacon and pineapple)
-                        <p class="price">Price: ₱42 - ₱77</p>
-                    </p>
+                    <p>Jollibee's classic, budget-friendly hamburger with a seasoned beef patty and special dressing (also available with cheese or as the double-patty Aloha Yumburger with bacon and pineapple).</p>
+                    <p class="price">₱54.99 – ₱69.99</p>
                 </div>
             </div>
             <div class="jollibee-food">
-                <img src="images/chiken-nuggets.jpg" alt="picture of dinuguan">
+                <img src="images/chiken-nuggets.jpg" alt="picture of nuggets">
                 <div class="jollibee-food-text">
                     <h3>Chicken Nuggets</h3>
-                    <p>Crispy, golden, bite-sized chicken chunks made from 100% white meat chicken. They are served hot with your choice of dipping sauce (such as BBQ sauce) and come in 6-piece or 10-piece solo sizes.
-                        <p class="price">Price: ₱99 - ₱250</p>
-                    </p>
+                    <p>Crispy, golden, bite-sized chicken chunks made from 100% white meat chicken. They are served hot with your choice of dipping sauce (such as BBQ sauce) and come in 6-piece or 10-piece solo sizes.</p>
+                    <p class="price">₱79.99 – ₱89.99</p>
                 </div>
             </div>
             <div class="jollibee-food">
-                <img src="images/fries.jpg" alt="picture of dinuguan">
+                <img src="images/fries.jpg" alt="picture of fries">
                 <div class="jollibee-food-text">
                     <h3>Jolly Crispy Fries</h3>
-                    <p>Jollibee's signature french fries that are crisp on the outside and tender on the inside. They are perfectly salted and available in Regular, Large, or Jumbo sizes.
-                        <p class="price">Price: ₱60 - ₱238</p>
-                    </p>
+                    <p>Jollibee's signature french fries that are crisp on the outside and tender on the inside. They are perfectly salted and available in Regular, Large, or Jumbo sizes.</p>
+                    <p class="price">₱59.99 – ₱74.99</p>
                 </div>
             </div>
-            <button><a href="jollibee.html">Order Now</a></button>
-        </div>
+        </section>
     </main>
+    <footer class="site-footer">
+        <p><strong>K-Counter</strong> · Your Digital Karinderya</p>
+        <a href="#top">Back to top ↑</a>
+    </footer>
 </body>
 
 </html>

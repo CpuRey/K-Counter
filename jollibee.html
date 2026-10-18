@@ -5,115 +5,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jollibee Ordering System</title>
-
     <link rel="stylesheet" href="jollibee.css">
     <script src="jollibee.js" defer></script>
 </head>
 
 <body>
-
     <h1>Order Now:</h1>
 
     <div class="order-menu">
-
-        <div class="jollibee-food">
+        <div class="jollibee-food" data-name="Chicken Joy" data-price="88">
             <img src="images/chicken-joy-meal.jpg" alt="Chicken Joy">
             <div class="jollibee-text">
-                <p>Chicken Joy: ₱120</p>
+                <p>Chicken Joy: ₱87.99</p>
             </div>
+            <label for="quantity-chicken">Quantity:</label>
+            <input id="quantity-chicken" class="quantity-input" type="number" min="0" step="1" value="0">
         </div>
 
-        <div class="jollibee-food">
+        <div class="jollibee-food" data-name="Spaghetti" data-price="69">
             <img src="images/sphagetti.jpg" alt="Spaghetti">
             <div class="jollibee-text">
-                <p>Spaghetti: ₱70</p>
+                <p>Spaghetti: ₱68.99</p>
             </div>
+            <label for="quantity-spaghetti">Quantity:</label>
+            <input id="quantity-spaghetti" class="quantity-input" type="number" min="0" step="1" value="0">
         </div>
 
-        <div class="jollibee-food">
+        <div class="jollibee-food" data-name="Yum Burger" data-price="55">
             <img src="images/yum-burger.jpg" alt="Yum Burger">
             <div class="jollibee-text">
-                <p>Yum Burger: ₱60</p>
+                <p>Yum Burger: ₱54.99</p>
             </div>
+            <label for="quantity-burger">Quantity:</label>
+            <input id="quantity-burger" class="quantity-input" type="number" min="0" step="1" value="0">
         </div>
 
-        <div class="jollibee-food">
+        <div class="jollibee-food" data-name="Chicken Nuggets" data-price="80">
             <img src="images/chiken-nuggets.jpg" alt="Chicken Nuggets">
             <div class="jollibee-text">
-                <p>Chicken Nuggets: ₱100</p>
+                <p>Chicken Nuggets: ₱79.99</p>
             </div>
+            <label for="quantity-nuggets">Quantity:</label>
+            <input id="quantity-nuggets" class="quantity-input" type="number" min="0" step="1" value="0">
         </div>
 
-        <div class="jollibee-food">
+        <div class="jollibee-food" data-name="Fries" data-price="60">
             <img src="images/fries.jpg" alt="Fries">
             <div class="jollibee-text">
-                <p>Fries: ₱73</p>
+                <p>Fries: ₱59.99</p>
             </div>
+            <label for="quantity-fries">Quantity:</label>
+            <input id="quantity-fries" class="quantity-input" type="number" min="0" step="1" value="0">
         </div>
-
     </div>
 
-    <div class="choose-order">
-
-        <h2>Select Quantity</h2>
-
-        <label for="chicken">Chicken Joy:</label>
-        <input type="number" id="chicken" min="0" value="0">
-        <br><br>
-
-        <label for="spaghetti">Spaghetti:</label>
-        <input type="number" id="spaghetti" min="0" value="0">
-        <br><br>
-
-        <label for="burger">Yum Burger:</label>
-        <input type="number" id="burger" min="0" value="0">
-        <br><br>
-
-        <label for="nuggets">Chicken Nuggets:</label>
-        <input type="number" id="nuggets" min="0" value="0">
-        <br><br>
-
-        <label for="fries">Fries:</label>
-        <input type="number" id="fries" min="0" value="0">
-        <br><br>
-
-        <button type="button" onclick="calculateOrder()">
-            Calculate Total
-        </button>
-
-        <h3>Order Summary</h3>
-        <div id="summary">
-            <p>No items selected.</p>
-        </div>
-
-        <h3>Total Amount: ₱<span id="total">0</span></h3>
-
-    </div>
+    <section class="order-summary" aria-labelledby="order-summary-title">
+        <h2 id="order-summary-title">Order Summary</h2>
+        <ul id="summary-items" aria-live="polite">
+            <li class="empty-order">No items selected yet.</li>
+        </ul>
+        <p class="order-total">Total Order: <strong id="order-total">₱0.00</strong></p>
+    </section>
 
     <div class="fill-info">
-
-        <form action="done.html" method="post">
-
-            <h2>Customer Information:</h2>
-
+        <form id="order-form">
+            <h2>Fill this information:</h2>
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <br><br>
+            <input type="text" id="name" name="name" required><br><br>
 
             <label for="address">Address:</label>
-            <input type="text" id="address" name="address" required>
-            <br><br>
+            <input type="text" id="address" name="address" required><br><br>
 
             <label for="contact">Contact Number:</label>
-            <input type="text" id="contact" name="contact" required>
-            <br><br>
+            <input type="tel" id="contact" name="contact" required><br><br>
 
-            <input type="submit" value="Submit Order">
-
+            <button type="submit">Submit Order</button>
+            <p id="order-confirmation" role="status" aria-live="polite"></p>
         </form>
-        <h3  id="back"><a href="main.html">Go Back To Main Page</h3>
-    </div>
 
+        <div class="back-link-container">
+            <a href="main.html" class="back-link">Go Back To Main Page</a>
+        </div>
+    </div>
 </body>
 
 </html>

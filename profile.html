@@ -3,52 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Profile</title>
+    <meta name="theme-color" content="#214b3a">
+    <meta name="description" content="View your K-Counter customer profile and order highlights.">
+    <title>My Profile | K-Counter</title>
     <link rel="stylesheet" href="profile.css">
 </head>
 <body>
-     <h1 id="title">K-Counter</h1>
-    <nav>
-        <a href="main.html">Main Page</a>
-        <a href="karinderya.html">Order Page</a>
-        <a href="profile.html">User Profile Page</a>
-    </nav>
-    <div class="profile-card">
-
-        <img src="images/no-photo.jpg" alt="Profile Picture">
-
-        <h1 id="user-name">Jared Ban</h1>
-
-        <p class="member">
-            Loyal Member
-        </p>
-
-        <div class="stats">
-
-            <div class="stat-box">
-                <h2>15</h2>
-                <p>Total Orders</p>
+    <header class="site-header">
+        <a class="brand" href="main.html" aria-label="K-Counter home">
+            <img src="images/K-counter-logo.jpg" alt="">
+            <span><strong>K-Counter</strong><small>Digital Karinderya</small></span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a class="nav-link" href="main.html">Home</a>
+            <a class="nav-link" href="main.html#karinderya">Karinderya</a>
+            <a class="nav-link" href="main.html#jollibee">Jollibee</a>
+            <a class="nav-link active" href="profile.html" aria-current="page">My profile</a>
+        </nav>
+    </header>
+    <main class="profile-page">
+        <section class="profile-card" aria-labelledby="user-name">
+            <div class="profile-intro">
+                <img class="profile-photo" src="images/no-photo.jpg" alt="Profile photo for Jared Ban">
+                <p class="eyebrow">Your K-Counter account</p>
+                <h1 id="user-name">Jared Ban</h1>
+                <p class="member"><span aria-hidden="true">✦</span> Loyal member</p>
             </div>
 
-            <div class="stat-box">
-                <h2>₱4,520</h2>
-                <p>Total Spent</p>
+            <div class="stats" aria-label="Order statistics">
+                <div class="stat-box">
+                    <p class="stat-value">15</p>
+                    <p>Total orders</p>
+                </div>
+                <div class="stat-box">
+                    <p class="stat-value">₱4,520</p>
+                    <p>Total spent</p>
+                </div>
             </div>
 
-        </div>
-
-        <div class="details">
-
-            <p><strong>Favorite Meal:</strong> Chicken Joy</p>
-
-            <p><strong>Recent Order:</strong> Chicken Joy + Fries</p>
-
-            <p><strong>Order Status:</strong> Preparing 🍳</p>
-
-            <p><strong>Member Since:</strong> 2026</p>
-
-        </div>
-    </div>
+            <div class="details">
+                <h2>Order highlights</h2>
+                <p><strong>Favorite meal</strong><span>Chicken Joy</span></p>
+                <p><strong>Recent order</strong><span>Chicken Joy + Fries</span></p>
+                <p><strong>Order status</strong><span class="status"><span class="status-dot" aria-hidden="true"></span> Preparing</span></p>
+                <p><strong>Member since</strong><span>2026</span></p>
+            </div>
+            <a class="button" href="main.html#jollibee">Explore the menu <span aria-hidden="true">→</span></a>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p><strong>K-Counter</strong> · Your Digital Karinderya</p>
+        <a href="main.html">Back to home ↑</a>
+    </footer>
 
 </body>
 </html>

@@ -6,71 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="karinderya.css">
+    <script src="karinderya.js" defer></script>
 </head>
 
 <body>
     <h1>Order Now:</h1>
     <div class="order-menu">
-        <div class="karinderya-food" data-name="Adobo" data-price="85">
+        <div class="karinderya-food" data-name="Adobo" data-price="36">
             <img src="images/adobo.png" alt="Adobo">
             <div class="karinderya-text">
-                <p>Adobo: ₱85</p>
+                <p>Adobo: ₱35.99</p>
             </div>
             <label for="quantity-adobo">Quantity:</label>
             <input id="quantity-adobo" class="quantity-input" type="number" min="0" step="1" value="0">
         </div>
-        <div class="karinderya-food" data-name="Tinola" data-price="93">
+        <div class="karinderya-food" data-name="Tinola" data-price="35">
             <img src="images/tinola.jpg" alt="Tinola">
             <div class="karinderya-text">
-                <p>Tinola: ₱93</p>
+                <p>Tinola: ₱34.99</p>
             </div>
             <label for="quantity-tinola">Quantity:</label>
             <input id="quantity-tinola" class="quantity-input" type="number" min="0" step="1" value="0">
         </div>
-        <div class="karinderya-food" data-name="Munggo" data-price="65">
+        <div class="karinderya-food" data-name="Munggo" data-price="30">
             <img src="images/munggo.jpg" alt="Munggo">
             <div class="karinderya-text">
-                <p>Munggo: ₱65</p>
+                <p>Munggo: ₱29.99</p>
             </div>
             <label for="quantity-munggo">Quantity:</label>
             <input id="quantity-munggo" class="quantity-input" type="number" min="0" step="1" value="0">
         </div>
-        <div class="karinderya-food" data-name="Afritada" data-price="105">
+        <div class="karinderya-food" data-name="Afritada" data-price="39">
             <img src="images/afritada.jpg" alt="Afritada">
             <div class="karinderya-text">
-                <p>Afritada: ₱105</p>
+                <p>Afritada: ₱38.99</p>
             </div>
             <label for="quantity-afritada">Quantity:</label>
             <input id="quantity-afritada" class="quantity-input" type="number" min="0" step="1" value="0">
         </div>
-        <div class="karinderya-food" data-name="Dinuguan" data-price="83">
+        <div class="karinderya-food" data-name="Dinuguan" data-price="30">
             <img src="images/dinuguan.jpg" alt="Dinuguan">
             <div class="karinderya-text">
-                <p>Dinuguan: ₱83</p>
+                <p>Dinuguan: ₱29.99</p>
             </div>
             <label for="quantity-dinuguan">Quantity:</label>
             <input id="quantity-dinuguan" class="quantity-input" type="number" min="0" step="1" value="0">
         </div>
-        <div class="karinderya-food" data-name="Pinakbet" data-price="75">
+        <div class="karinderya-food" data-name="Pinakbet" data-price="30">
             <img src="images/pinakbet.jpg" alt="Pinakbet">
             <div class="karinderya-text">
-                <p>Pinakbet: ₱75</p>
+                <p>Pinakbet: ₱29.99</p>
             </div>
             <label for="quantity-pinakbet">Quantity:</label>
             <input id="quantity-pinakbet" class="quantity-input" type="number" min="0" step="1" value="0">
         </div>
-        <div class="karinderya-food" data-name="Minudo" data-price="93">
+        <div class="karinderya-food" data-name="Minudo" data-price="33">
             <img src="images/minudo.jpg" alt="Minudo">
             <div class="karinderya-text">
-                <p>Minudo: ₱93</p>
+                <p>Minudo: ₱32.99</p>
             </div>
             <label for="quantity-minudo">Quantity:</label>
             <input id="quantity-minudo" class="quantity-input" type="number" min="0" step="1" value="0">
         </div>
-        <div class="karinderya-food" data-name="Bicol Express" data-price="105">
+        <div class="karinderya-food" data-name="Bicol Express" data-price="35">
             <img src="images/bicol-express.jpg" alt="Bicol Express">
             <div class="karinderya-text">
-                <p>Bicol Express: ₱105</p>
+                <p>Bicol Express: ₱34.99</p>
             </div>
             <label for="quantity-bicol-express">Quantity:</label>
             <input id="quantity-bicol-express" class="quantity-input" type="number" min="0" step="1" value="0">
@@ -101,81 +102,9 @@
             <p id="order-confirmation" role="status" aria-live="polite"></p>
         </form>
     </div>
-
-    <script>
-        const foodCards = document.querySelectorAll(".karinderya-food");
-        const summaryItems = document.getElementById("summary-items");
-        const totalElement = document.getElementById("order-total");
-        const confirmation = document.getElementById("order-confirmation");
-        const orderForm = document.getElementById("order-form");
-        const currency = new Intl.NumberFormat("en-PH", {
-            style: "currency",
-            currency: "PHP"
-        });
-
-        function getOrderItems() {
-            return Array.from(foodCards).reduce((items, card) => {
-                const quantityInput = card.querySelector(".quantity-input");
-                const quantity = Number(quantityInput.value);
-
-                if (Number.isInteger(quantity) && quantity > 0) {
-                    const price = Number(card.dataset.price);
-                    items.push({
-                        name: card.dataset.name,
-                        quantity,
-                        price,
-                        subtotal: quantity * price
-                    });
-                }
-
-                return items;
-            }, []);
-        }
-
-        function updateOrderSummary() {
-            const items = getOrderItems();
-            const total = items.reduce((sum, item) => sum + item.subtotal, 0);
-
-            summaryItems.replaceChildren();
-            if (items.length === 0) {
-                const emptyItem = document.createElement("li");
-                emptyItem.className = "empty-order";
-                emptyItem.textContent = "No items selected yet.";
-                summaryItems.append(emptyItem);
-            } else {
-                items.forEach((item) => {
-                    const summaryItem = document.createElement("li");
-                    summaryItem.textContent =
-                        ${item.name} × ${item.quantity} — ${currency.format(item.subtotal)};
-                    summaryItems.append(summaryItem);
-                });
-            }
-
-            totalElement.textContent = currency.format(total);
-            confirmation.textContent = "";
-        }
-
-        foodCards.forEach((card) => {
-            card.querySelector(".quantity-input").addEventListener("input", updateOrderSummary);
-        });
-
-        orderForm.addEventListener("submit", (event) => {
-            event.preventDefault();
-            const items = getOrderItems();
-
-            if (items.length === 0) {
-                confirmation.textContent = "Please select at least one menu item.";
-                return;
-            }
-
-            const total = items.reduce((sum, item) => sum + item.subtotal, 0);
-            confirmation.textContent =
-                Thank you, ${document.getElementById("name").value.trim()}!  +
-                Your order total is ${currency.format(total)}.;
-        });
-
-        updateOrderSummary();
-    </script>
+    <div class="back-link-container">
+        <a href="main.html" class="back-link">Go Back To Main Page</a>
+    </div>
 </body>
 
 </html>
