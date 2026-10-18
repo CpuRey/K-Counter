@@ -59,8 +59,20 @@ img{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.karinderya-food label{
+    color: white;
+    font-weight: 600;
+}
+
+.quantity-input{
+    width: 70px;
+    padding: 7px;
+    margin-left: 6px;
+}
+
+.order-summary,
 form{
-    background-color: rgb(221, 156, 70);
+    background-color: rgb(171, 221, 70);
     padding: 20px;
     width: 70%;
     margin: 20px auto;
@@ -78,83 +90,67 @@ form input{
     padding: 5px;
 }
 
-/* ORDER SECTION */
-
-.choose-order{
-    background-color: rgb(221, 70, 70);
-    width: 70%;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px;
+.order-summary{
+    max-width: 760px;
 }
 
-.choose-order h2{
-    text-align: center;
-    margin-bottom: 20px;
+.order-summary h2{
+    margin-top: 0;
 }
 
-.choose-order label{
-    display: inline-block;
-    width: 150px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.order-summary ul{
+    padding-left: 24px;
 }
 
-.choose-order input[type="number"]{
-    width: 70px;
-    padding: 5px;
-    border: 1px solid #999;
-    border-radius: 5px;
+.order-summary li{
+    margin: 8px 0;
 }
 
-.choose-order button{
+.empty-order{
+    list-style: none;
+    margin-left: -24px !important;
+}
+
+.order-total{
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    padding-top: 12px;
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+form button{
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 6px;
     background-color: rgb(10, 99, 70);
     color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 15px;
-    border-radius: 5px;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 16px;
 }
 
-.choose-order button:hover{
-    background-color: rgb(14, 130, 91);
+form button:hover{
+    background-color: rgb(7, 75, 53);
 }
 
-/* ORDER SUMMARY */
-
-#summary{
-    background-color: white;
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 10px;
-    border: 2px solid rgb(214, 166, 104);
+#order-confirmation{
+    font-weight: 600;
 }
 
-#summary p{
-    margin: 5px 0;
-}
+@media (max-width: 600px){
+    body{
+        padding: 12px;
+    }
 
-/* TOTAL AMOUNT */
+    h1{
+        width: auto;
+    }
 
-.choose-order h3{
-    margin-top: 15px;
-}
+    .order-summary,
+    form{
+        width: 100%;
+    }
 
-#total{
-    color: rgb(241, 241, 241);
-    font-weight: bold;
-    font-size: 24px;
-}
-
-#back{
-    background-color: #9ddbff;
-    width: fit-content;
-    padding: 10px;
-    border-radius: 20px;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    form label{
+        width: 100%;
+    }
 }
