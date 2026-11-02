@@ -9,20 +9,34 @@ const currency = new Intl.NumberFormat("en-PH", {
 });
 
 function sanitizeQuantity(value) {
+    if (value === null || value === undefined || value === "") {
+        return 0;
+    }
+
     const quantity = Number(value);
     if (!Number.isFinite(quantity) || quantity < 0) {
         return 0;
     }
+
     return Math.trunc(quantity);
+}
+
+function sanitizePrice(value) {
+    const price = Number(value);
+    return Number.isFinite(price) && price >= 0 ? price : 0;
 }
 
 function getOrderItems() {
     return Array.from(foodCards).reduce((items, card) => {
         const quantityInput = card.querySelector(".quantity-input");
+        if (!quantityInput) {
+            return items;
+        }
+
         const quantity = sanitizeQuantity(quantityInput.value);
 
         if (quantity > 0) {
-            const price = Number(card.dataset.price);
+            const price = sanitizePrice(card.dataset.price);
             items.push({
                 name: card.dataset.name,
                 quantity,
@@ -36,6 +50,10 @@ function getOrderItems() {
 }
 
 function updateOrderSummary() {
+    if (!summaryItems || !totalElement) {
+        return;
+    }
+
     const items = getOrderItems();
     const total = items.reduce((sum, item) => sum + item.subtotal, 0);
 
@@ -54,25 +72,59 @@ function updateOrderSummary() {
     }
 
     totalElement.textContent = currency.format(total);
-    confirmation.textContent = "";
+    if (confirmation) {
+        confirmation.textContent = "";
+    }
 }
 
-foodCards.forEach((card) => {
-    card.querySelector(".quantity-input").addEventListener("input", updateOrderSummary);
-});
+if (foodCards.length > 0) {
+    foodCards.forEach((card) => {
+        const quantityInput = card.querySelector(".quantity-input");
+        if (quantityInput) {
+            quantityInput.addEventListener("input", updateOrderSummary);
+        }
+    });
+}
 
-orderForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const items = getOrderItems();
+if (orderForm) {
+    orderForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const items = getOrderItems();
 
-    if (items.length === 0) {
-        confirmation.textContent = "Please select at least one menu item.";
-        return;
-    }
+        if (items.length === 0) {
+            if (confirmation) {
+                confirmation.textContent = "Please select at least one menu item.";
+            }
+            return;
+        }
 
-    const total = items.reduce((sum, item) => sum + item.subtotal, 0);
-    const customerName = document.getElementById("name").value.trim();
-    confirmation.textContent = `Thank you, ${customerName}! Your order total is ${currency.format(total)}.`;
-});
+        const total = items.reduce((sum, item) => sum + item.subtotal, 0);
+        const customerNameInput = document.getElementById("name");
+        const customerName = customerNameInput ? customerNameInput.value.trim() : "";
+        const selectedPayment = orderForm.querySelector('input[name="payment-method"]:checked');
+
+        if (!customerName) {
+            if (confirmation) {
+                confirmation.textContent = "Please enter your name before placing the order.";
+            }
+            return;
+        }
+
+        if (!selectedPayment) {
+            if (confirmation) {
+                confirmation.textContent = "Please select a payment method.";
+            }
+            return;
+        }
+
+        const paymentDescription = selectedPayment.value === "digital"
+            ? "Digital payment selected (not processed in this demo)"
+            : "Pay in person with cash";
+
+        if (confirmation) {
+            confirmation.textContent = `Thank you, ${customerName}! Your order total is ${currency.format(total)}. Payment: ${paymentDescription}.`;
+        }
+    });
+}
 
 updateOrderSummary();

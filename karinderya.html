@@ -98,6 +98,13 @@
             <label for="contact">Contact Number:</label>
             <input type="tel" id="contact" name="contact" required><br><br>
 
+            <fieldset class="payment-options">
+                <legend>Payment method:</legend>
+                <label><input type="radio" name="payment-method" value="digital" required> Digital payment</label>
+                <label><input type="radio" name="payment-method" value="in-person" required> Pay in person (cash)</label>
+                <p class="payment-note">This demo records your choice only; digital payments are not processed.</p>
+            </fieldset>
+
             <button type="submit">Submit Order</button>
             <p id="order-confirmation" role="status" aria-live="polite"></p>
         </form>

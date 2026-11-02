@@ -325,6 +325,7 @@ a:focus-visible {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 16px;
     padding: 24px 0 34px;
     color: var(--muted);
@@ -347,6 +348,128 @@ a:focus-visible {
 
 .site-footer a:hover {
     text-decoration: underline;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+}
+
+.info-page {
+    width: min(900px, calc(100% - 48px));
+    margin: 42px auto 64px;
+}
+
+.info-card {
+    padding: clamp(24px, 5vw, 48px);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: var(--paper);
+    box-shadow: var(--shadow);
+}
+
+.info-card h1,
+.info-card h2 {
+    color: var(--green-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.info-card h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+}
+
+.info-card h2 {
+    margin: 30px 0 8px;
+    font-size: 1.45rem;
+}
+
+.info-card p,
+.info-card li {
+    color: var(--muted);
+}
+
+.info-card p {
+    margin: 10px 0;
+}
+
+.info-card ul {
+    padding-left: 24px;
+}
+
+.info-card a {
+    color: var(--green);
+    font-weight: 650;
+}
+
+.info-notice {
+    margin: 22px 0;
+    padding: 16px 18px;
+    border-left: 4px solid var(--orange);
+    border-radius: 8px;
+    background: #fff4e9;
+    color: var(--ink);
+}
+
+.support-form {
+    display: grid;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.support-form label {
+    margin-top: 8px;
+    color: var(--ink);
+    font-weight: 650;
+}
+
+.support-form input,
+.support-form textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: white;
+    color: var(--ink);
+    font: inherit;
+}
+
+.support-form textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.support-form button {
+    justify-self: start;
+    margin-top: 10px;
+    padding: 11px 19px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--green);
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.support-form button:hover {
+    background: var(--green-dark);
+}
+
+.support-form button:focus-visible,
+.support-form input:focus-visible,
+.support-form textarea:focus-visible {
+    outline: 3px solid #e8a253;
+    outline-offset: 3px;
+}
+
+#support-response {
+    min-height: 1.65em;
+    color: var(--green-dark);
+    font-weight: 650;
 }
 
 @media (max-width: 720px) {
@@ -429,6 +552,11 @@ a:focus-visible {
 
     .site-footer {
         padding: 20px 0 28px;
+    }
+
+    .info-page {
+        width: min(100% - 28px, 900px);
+        margin-top: 28px;
     }
 }
 
